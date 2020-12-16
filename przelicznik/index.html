@@ -1,0 +1,74 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Przelicznik</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script>
+        function oblicz(zr,liczba) 
+{
+    liczba = parseFloat(liczba);
+    var mm = document.getElementById("mm");
+    var cm = document.getElementById("cm");
+    var metr = document.getElementById("metr");
+    var km = document.getElementById("km");
+  if (zr=="mm") 
+  {
+    cm.value=(liczba*0.1).toString();  
+    metr.value=(liczba*0.01).toString(); 
+    km.value=(liczba*0.00001).toString();  
+  }    
+  if (zr=="cm") 
+  {
+    mm.value=(liczba*10).toString();  
+    metr.value=(liczba/100).toString();
+    km.value=(liczba/100000).toString();
+  }
+  if (zr=="metr") 
+  {
+    mm.value=(liczba*1000).toString();  
+    cm.value=(liczba/0.01).toString();
+    km.value=(liczba/1000).toString();    
+  }    
+  if (zr=="km")
+  {
+    mm.value=(liczba*1000000).toString();  
+    cm.value=(liczba*100000).toString();  
+    metr.value=(liczba*1000).toString();  
+  }
+}
+    
+    </script>
+
+</head>
+<body>
+    <center>      
+        <div class="main">
+    <h1> Przelicznik jednostek miary</h1>
+
+<div class="dystans">
+
+    <div class="linia">
+                    <div style="float: left; margin-right: 100px; margin-left: 100px;">
+                        <h3> Milimetry </h3>
+<input id="mm" type="number" placeholder="milimetry" oninput="oblicz(this.id,this.value)" onchange="oblicz(this.id,this.value)">
+                    </div>
+                    <div style="float: left; margin-right: 100px;">
+                        <h3> Centymetry </h3>
+<input id="cm" type="number" placeholder="centymetry" oninput="oblicz(this.id,this.value)" onchange="oblicz(this.id,this.value)">
+                    </div>
+                    <div style="float: left; margin-right: 100px;">
+                        <h3> Metry </h3>
+<input id="metr" type="number" placeholder="metry" oninput="oblicz(this.id,this.value)" onchange="oblicz(this.id,this.value)">
+                    </div>
+        <div style="float: left; margin-right: 100px;">
+                        <h3> Kilometry </h3>
+<input id="km" type="number" placeholder="kilometry" oninput="oblicz(this.id,this.value)" onchange="oblicz(this.id,this.value)">
+        </div>                    
+    </div>
+
+</div>
+    </div>
+    </center>      
+</body>
+    
+</html>            
